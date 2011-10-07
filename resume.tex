@@ -1,0 +1,253 @@
+% -*- mode: LaTeX; mode: TeX-PDF; coding: iso-latin-1-unix; TeX-engine: xetex; -*-
+
+\documentclass[10pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Felipe Magno de Almeida}
+\newcommand{\addr}{Rua Coronel Paulo Malta Rezende, 35/1708 - Barra da Tijuca - Rio de Janeiro-RJ}
+\newcommand{\phone}{(21) 8242-8479}
+\newcommand{\email}{eu@felipemagno.com.br}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\fontfamily{phv}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\fontfamily{phv}\selectfont\Large#1}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}---#2 \\
+	\textit{#3}
+}
+
+% A resbigitem_1 is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%\newcommand{\resbigitem_1}[1]{
+%	\vspace{-5pt}
+%	\item
+%	\textbf{#1}
+%}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec_1}[1]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+\newenvironment{ressubsecvalue}[4]{
+	\resbigitem{#1}{#2}{#3} \\
+	{\footnotesize #4}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+\fontfamily{ppl} \selectfont
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-1pt} {\small\itshape \addr \hfill \phone; \email}
+
+\vspace{8 pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Objetivo}
+
+	\resitem{Consultor e/ou programador C++.}
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Educa\c{c}\~ao}
+
+	\resitem{Universidade Estadual de Campinas (Unicamp) - Campinas, SP - Ci\^encia da Computa\c{c}\~ao.}
+		%\ressubitem{Ingresso: 2003/Incompleto}
+	%\end{ressubsec}
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Experi\^encia}
+
+  \begin{ressubsec}{TECGRAF}{Rio de Janeiro, RJ}{Analista de Sistemas: Junho de 2010--Atual}
+    \ressubitem{Trabalho de correção e design de projetos baseados em componentes em sistemas distribuídos}
+    \ressubitem{}
+  \end{ressubsec}
+
+	\begin{ressubsec}{TQTVD}{Rio de Janeiro, RJ}{Analista de Sistemas: Janeiro de 2009--Junho de 2010}
+      \ressubitem{Correções de concorrência, memory leaks e type subverting em código de desenvolvimento
+        terceirizado, adaptado para uso na empresa.}
+      \ressubitem{Trabalho em grupo com correções em middleware e sistema multiplataforma.}
+      \ressubitem{Desenvolvimento de aplicações embarcadas e utilização de plataformas de memória restrita.
+        Criação de middleware para execução de código alto-nível em plataformas embarcadas}
+      \ressubitem{Reescrita de interpretador NCL, linguagem utilizada em TV digital, multi-plataforma,
+        unit-tests e genérica.}
+      \ressubitem{Integração de linguagem Python com middleware de TV digital.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Synergy Tecnologia}{S\~ao Paulo, SP}{Analista de Sistemas: Janeiro de 2004--2009}
+		\ressubitem{Mantido, redesenhado e programado o projeto MailIntercept (http://www.mintercept.com). Tendo como clientes Missile Defense Agency e Raytheon.}
+		\ressubitem{Profundo conhecimento dos padr\~oes de MIME, SMTP, RFC[2]822. Como tamb\'em do formato TNEF de e-mail do Exchange Server.
+		  Tendo escrito v\'arios parsers para esses padr\~oes, bem como clientes que utilizam asynchronous I/O de SMTP e HTTP.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Expertise Solutions Consultoria em Inform\'atica}{Campinas, SP}{Consultor e Sócio: Maio de 2006--at\'e o momento}
+		\ressubitem{Professor de uma turma sobre C++ para iniciantes dada no Laborat\'orio do Instituto de
+		Computa\c{c}\~ao da Unicamp.}
+		\ressubitem{Professor de duas turmas no Laboratório do Instituto de Computa\c{c}\~ao de curso intermediário de C++, com total de 137 alunos.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Z80}{Campinas, SP}{Programador C para BREW: Outubro de 2003--2004}
+		\ressubitem{Programação de jogos para celular.}
+	\end{ressubsec}
+
+
+	\begin{ressubsec_1}{Boost Libraries}
+		\ressubitem{Constante nos agradecimentos de tr\^es bibliotecas: wave, pointer container e multi\_index}
+		\ressubitem{Constante nos agradecimentos da proposta de biblioteca de rede ao comite de padroniza\c{c}\~ao do C++
+		  (http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2054.pdf), da biblioteca recentemente adicionada asio.}
+		\ressubitem{Trabalhando com peer review de código da cppgui e engine de layout baseado na adam \& eve da Adobe
+		  junto a Boost Libraries, para desenvolvimento de uma biblioteca com maior abrangência e qualidade possíveis.}
+	\end{ressubsec_1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{ressubsec_1}{Cppgui}
+	  \ressubitem{Autor da biblioteca cppgui de cria\c{c}\~ao de GUIs em C++, com interface utilizando {\em named parameters}
+            e t\'ecnicas modernas de C++.}
+          \ressubitem{Backend para QT e Win32, dando maior portabilidade sem sacrificação de look\&feel.}
+	  \ressubitem{Código em Subversion disponível em http://svn.assembla.com/svn/cppgui}
+	  \ressubitem{Documentação em http://www.assembla.com/wiki/show/cppgui}
+	\end{ressubsec_1}
+
+	\begin{ressubsec_1}{Linear}
+	  \ressubitem{Co-autor da biblioteca ainda em desenvolvimento de programação linear.}
+	  \ressubitem{A biblioteca consiste em uma Linguagem Embutida de Domínio Específico, também conhecida
+	  como DSEL ou Domain Specific Embedded Language, utilizando técnicas
+	    de {\em expression templates} e meta-programação para representação de problemas
+	    de otimização utilizando programação linear.}
+	  \ressubitem{Código em Subversion disponível em http://my-svn.assembla.com/svn/liblinear}
+	  \ressubitem{http://www.assembla.com/wiki/show/liblinear}
+	\end{ressubsec_1}
+
+	\begin{ressubsec_1}{SQL}
+	  \ressubitem{Autor da biblioteca sql ainda em desenvolvimento de SQL.}
+	  \ressubitem{A biblioteca consiste em uma DSEL de representação SQL em C++ para consultas e transações em SQL}
+	  \ressubitem{Código em Subversion disponível em http://my-svn.assembla.com/svn/sql}
+	  \ressubitem{http://www.assembla.com/spaces/sql/new\_items}
+	\end{ressubsec_1}
+
+	\begin{ressubsec_1}{5$^{\underline{o}}$ Encontro Nacional de Programadores de C e C++}
+	  \ressubitem{Palestrante sobre Linguagens Embutidas de Domínio Específico.}
+	\end{ressubsec_1}
+
+\end{ressection}
+
+\begin{ressection}{Conhecimentos}
+
+	\begin{reslist}{Linguagens de Programa\c{c}\~ao:}
+
+		\ressubitem{Proficiente em C, C++, Assembly 80x86/386+ e MIPS, SQL, HTML, \LaTeX, UNIX Shells, TCP, sockets, XML, postgresql
+          , OpenSSL, Boost, STL, Qt, Gtk, pthreads, Win32, Win64, CMake, Linux, Windows, threads, BD
+          , Design Patterns, CMake, svn, subversion, cvs, Mercurial, regexp, BJam, Boost.Build, CORBA, CMake}
+		\ressubitem{Familiar com Java e C\#.}
+		\ressubitem{Bastante interessado no futuro e presente de C++.}
+        \ressubitem{Autodidata - Com biblioteca contendo vários livros de computação, com mais de 12 livros só de C++. Entre outros de compiladores, influ\^encia da tipagem
+		  no processo de design de software e etc.}
+		\ressubitem{Este curriculum \'e feito em \LaTeX.}
+		\ressubitem{Inglês fluente.}
+
+	\end{reslist}
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Outros}
+	\resitem{Autor de diversos materiais sobre C++, de iniciantes
+      at\'e para programadores avan\c{c}ados, focando em Software
+      Design.}
+    \resitem{LinkedIn profile: http://br.linkedin.com/in/felipealmeida}
+\end{ressection}
+
+
+\end{document}
