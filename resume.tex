@@ -1,7 +1,8 @@
-% -*- mode: LaTeX; mode: TeX-PDF; coding: iso-latin-1-unix; TeX-engine: xetex; -*-
+% -*- mode: LaTeX; eval: (TeX-PDF-mode); TeX-engine: xetex; coding: utf-8-unix; TeX-master: t; ispell-local-dictionary: "brasileiro"; -*-
 
 \documentclass[10pt,oneside]{article}
 \usepackage{geometry}
+\usepackage{fontspec}
 \usepackage[T1]{fontenc}
 
 \pagestyle{empty}
@@ -147,18 +148,20 @@
 \begin{ressection}{Experi\^encia}
 
   \begin{ressubsec}{TECGRAF}{Rio de Janeiro, RJ}{Analista de Sistemas: Junho de 2010--Atual}
-    \ressubitem{Trabalho de correÁ„o e design de projetos baseados em componentes em sistemas distribuÌdos}
+    \ressubitem{Trabalho de corre√ß√£o e design de projetos baseados em componentes em sistemas distribu√≠dos}
+    \ressubitem{Bastante uso de tecnologia CORBA}
+    \ressubitem{Contato com equipe de desenvolvimento Petrobr√°s para suporte das bibliotecas desenvolvidas}
   \end{ressubsec}
 
 	\begin{ressubsec}{TQTVD}{Rio de Janeiro, RJ}{Analista de Sistemas: Janeiro de 2009--Junho de 2010}
-      \ressubitem{CorreÁıes de concorrÍncia, memory leaks e type subverting em cÛdigo de desenvolvimento
+      \ressubitem{Corre√ß√µes de concorr√™ncia, memory leaks e type subverting em c√≥digo de desenvolvimento
         terceirizado, adaptado para uso na empresa.}
-      \ressubitem{Trabalho em grupo com correÁıes em middleware e sistema multiplataforma.}
-      \ressubitem{Desenvolvimento de aplicaÁıes embarcadas e utilizaÁ„o de plataformas de memÛria restrita.
-        CriaÁ„o de middleware para execuÁ„o de cÛdigo alto-nÌvel em plataformas embarcadas}
+      \ressubitem{Trabalho em grupo com corre√ß√µes em middleware e sistema multiplataforma.}
+      \ressubitem{Desenvolvimento de aplica√ß√µes embarcadas e utiliza√ß√£o de plataformas de mem√≥ria restrita.
+        Cria√ß√£o de middleware para execu√ß√£o de c√≥digo alto-n√≠vel em plataformas embarcadas}
       \ressubitem{Reescrita de interpretador NCL, linguagem utilizada em TV digital, multi-plataforma,
-        unit-tests e genÈrica.}
-      \ressubitem{IntegraÁ„o de linguagem Python com middleware de TV digital.}
+        unit-tests e gen√©rica.}
+      \ressubitem{Integra√ß√£o de linguagem Python com middleware de TV digital.}
 	\end{ressubsec}
 
 	\begin{ressubsec}{Synergy Tecnologia}{S\~ao Paulo, SP}{Analista de Sistemas: Janeiro de 2004--2009}
@@ -167,59 +170,70 @@
 		  Tendo escrito v\'arios parsers para esses padr\~oes, bem como clientes que utilizam asynchronous I/O de SMTP e HTTP.}
 	\end{ressubsec}
 
-	\begin{ressubsec}{Expertise Solutions Consultoria em Inform\'atica}{Campinas, SP}{Consultor e SÛcio: Maio de 2006--at\'e o momento}
+	\begin{ressubsec}{Expertise Solutions Consultoria em Inform\'atica}{Campinas, SP}{Consultor e S√≥cio: Maio de 2006--at\'e o momento}
 		\ressubitem{Professor de uma turma sobre C++ para iniciantes dada no Laborat\'orio do Instituto de
 		Computa\c{c}\~ao da Unicamp.}
-		\ressubitem{Professor de duas turmas no LaboratÛrio do Instituto de Computa\c{c}\~ao de curso intermedi·rio de C++, com total de 137 alunos.}
+		\ressubitem{Professor de duas turmas no Laborat√≥rio do Instituto de Computa\c{c}\~ao de curso intermedi√°rio de C++, com total de 137 alunos.}
 	\end{ressubsec}
 
 	\begin{ressubsec}{Z80}{Campinas, SP}{Programador C para BREW: Outubro de 2003--2004}
-		\ressubitem{ProgramaÁ„o de jogos para celular.}
+		\ressubitem{Programa√ß√£o de jogos para celular.}
 	\end{ressubsec}
 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 	\begin{ressubsec_1}{Boost Libraries}
 		\ressubitem{Constante nos agradecimentos de tr\^es bibliotecas: wave, pointer container e multi\_index}
 		\ressubitem{Constante nos agradecimentos da proposta de biblioteca de rede ao comite de padroniza\c{c}\~ao do C++
 		  (http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2054.pdf), da biblioteca recentemente adicionada asio.}
-		\ressubitem{Trabalhando com peer review de cÛdigo da cppgui e engine de layout baseado na adam \& eve da Adobe
-		  junto a Boost Libraries, para desenvolvimento de uma biblioteca com maior abrangÍncia e qualidade possÌveis.}
+		\ressubitem{Trabalhando com peer review de c√≥digo da cppgui e engine de layout baseado na adam \& eve da Adobe
+		  junto a Boost Libraries, para desenvolvimento de uma biblioteca com maior abrang√™ncia e qualidade poss√≠veis.}
+		\ressubitem{Ativo na mailing list de desenvolvimento, dando opini√µes, enviando patches}
 	\end{ressubsec_1}
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{ressubsec_1}{Javabind}
+	  \ressubitem{Autor de biblioteca para integra√ß√£o de c√≥digo Java e C++}
+          \ressubitem{Uso de preprocessor e template metaprogramming}
+          \ressubitem{Cria√ß√£o (por preprocessor metaprogramming) de classes est√°ticas que representam
+            as mesmas em Java, para checagem est√°tica e performance}
+          \ressubitem{Gera√ß√£o de Class File e bytecode}
+	  \ressubitem{C√≥digo em git dispon√≠vel em https://github.com/felipealmeida/javabind}
+	\end{ressubsec_1}
 	
-	\begin{ressubsec_1}{Cppgui}
-	  \ressubitem{Autor da biblioteca cppgui de cria\c{c}\~ao de GUIs em C++, com interface utilizando {\em named parameters}
-            e t\'ecnicas modernas de C++.}
-          \ressubitem{Backend para QT e Win32, dando maior portabilidade sem sacrificaÁ„o de look\&feel.}
-	  \ressubitem{CÛdigo em Subversion disponÌvel em http://svn.assembla.com/svn/cppgui}
-	  \ressubitem{DocumentaÁ„o em http://www.assembla.com/wiki/show/cppgui}
+	\begin{ressubsec_1}{mORBid}
+	  \ressubitem{Autor de biblioteca de protocolo CORBA}
+          \ressubitem{Uso de metaprograma√ß√£o para gera√ß√£o de parsers e geradores a partir de gram√°tica GIOP}
+	  \ressubitem{C√≥digo em git dispon√≠vel em https://github.com/felipealmeida/mORBid}
 	\end{ressubsec_1}
 
 	\begin{ressubsec_1}{Linear}
-	  \ressubitem{Co-autor da biblioteca ainda em desenvolvimento de programaÁ„o linear.}
-	  \ressubitem{A biblioteca consiste em uma Linguagem Embutida de DomÌnio EspecÌfico, tambÈm conhecida
-	  como DSEL ou Domain Specific Embedded Language, utilizando tÈcnicas
-	    de {\em expression templates} e meta-programaÁ„o para representaÁ„o de problemas
-	    de otimizaÁ„o utilizando programaÁ„o linear.}
-	  \ressubitem{CÛdigo em Subversion disponÌvel em http://my-svn.assembla.com/svn/liblinear}
+	  \ressubitem{Co-autor da biblioteca ainda em desenvolvimento de programa√ß√£o linear.}
+	  \ressubitem{A biblioteca consiste em uma Linguagem Embutida de Dom√≠nio Espec√≠fico, tamb√©m conhecida
+	  como DSEL ou Domain Specific Embedded Language, utilizando t√©cnicas
+	    de {\em expression templates} e meta-programa√ß√£o para representa√ß√£o de problemas
+	    de otimiza√ß√£o utilizando programa√ß√£o linear.}
+	  \ressubitem{C√≥digo em Subversion dispon√≠vel em http://my-svn.assembla.com/svn/liblinear}
 	  \ressubitem{http://www.assembla.com/wiki/show/liblinear}
 	\end{ressubsec_1}
 
 	\begin{ressubsec_1}{SQL}
 	  \ressubitem{Autor da biblioteca sql ainda em desenvolvimento de SQL.}
-	  \ressubitem{A biblioteca consiste em uma DSEL de representaÁ„o SQL em C++ para consultas e transaÁıes em SQL}
-	  \ressubitem{CÛdigo em Subversion disponÌvel em http://my-svn.assembla.com/svn/sql}
+	  \ressubitem{A biblioteca consiste em uma DSEL de representa√ß√£o SQL em C++ para consultas e transa√ß√µes em SQL}
+	  \ressubitem{C√≥digo em Subversion dispon√≠vel em http://my-svn.assembla.com/svn/sql}
 	  \ressubitem{http://www.assembla.com/spaces/sql/new\_items}
 	\end{ressubsec_1}
 
 	\begin{ressubsec_1}{5$^{\underline{o}}$ Encontro Nacional de Programadores de C e C++}
-	  \ressubitem{Palestrante sobre Linguagens Embutidas de DomÌnio EspecÌfico.}
+	  \ressubitem{Palestrante sobre Linguagens Embutidas de Dom√≠nio Espec√≠fico.}
 	\end{ressubsec_1}
 
 \end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{ressection}{Conhecimentos}
 
@@ -230,10 +244,10 @@
           , Design Patterns, CMake, svn, subversion, cvs, Mercurial, regexp, BJam, Boost.Build, CORBA, CMake}
 		\ressubitem{Familiar com Java e C\#.}
 		\ressubitem{Bastante interessado no futuro e presente de C++.}
-        \ressubitem{Autodidata - Com biblioteca contendo v·rios livros de computaÁ„o, com mais de 12 livros sÛ de C++. Entre outros de compiladores, influ\^encia da tipagem
-		  no processo de design de software e etc.}
+        \ressubitem{Autodidata - Com biblioteca contendo v√°rios livros de computa√ß√£o, com mais de 12 livros s√≥ de C++. Entre outros de compiladores, influ\^encia da tipagem
+		  no processo de design de software, provabilidade de corretude e etc.}
 		\ressubitem{Este curriculum \'e feito em \LaTeX.}
-		\ressubitem{InglÍs fluente.}
+		\ressubitem{Ingl√™s fluente.}
 
 	\end{reslist}
 
