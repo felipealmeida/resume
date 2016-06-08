@@ -4,9 +4,24 @@
 \usepackage{geometry}
 \usepackage{fontspec}
 \usepackage[T1]{fontenc}
-
+\usepackage{wrapfig}
+\usepackage{eso-pic}
+\usepackage{calc}
+\usepackage{hyperref}
 \pagestyle{empty}
-\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+\geometry{letterpaper,tmargin=1cm,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\newcommand\AtPageUpperRight[1]{\AtPageUpperLeft{%
+   \makebox[\paperwidth-0.5cm][r]{#1}}}
+
+\AddToShipoutPicture{%
+\AtPageUpperRight{%
+\raisebox{-1\height-0.5cm}{\makebox[1\width][r]{
+ \def\svgwidth{3cm}
+ \input{logo.pdf_tex}
+}}
+}}
+
 
 \setlength{\parindent}{0in}
 \setlength{\parskip}{0in}
@@ -15,10 +30,10 @@
 \setlength{\tabcolsep}{0in}
 
 % Name and contact information
-\newcommand{\name}{Felipe Magno de Almeida}
-\newcommand{\addr}{Rua Coronel Paulo Malta Rezende, 35/1708 - Barra da Tijuca - Rio de Janeiro-RJ}
-\newcommand{\phone}{(21) 8242-8479}
-\newcommand{\email}{eu@felipemagno.com.br}
+\newcommand{\name}{Felipe Magno de Almeida\\Expertise Solutions}
+\newcommand{\addr}{}
+\newcommand{\phone}{\url{http://www.expertisesolutions.com.br}}
+\newcommand{\email}{\href{mailto:felipe@expertisesolutions.com.br}{\nolinkurl{felipe@expertisesolutions.com.br}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % New commands and environments
@@ -61,6 +76,16 @@
 	\textit{#3}
 }
 
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resonelinebigitem}[2]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}---#2
+}
+
 % A resbigitem_1 is a complex list element for stuff like jobs and education:
 %  Arg 1: Name of company or university
 %\newcommand{\resbigitem_1}[1]{
@@ -72,6 +97,13 @@
 % This is a list that comes with a resbigitem
 \newenvironment{ressubsec}[3]{
 	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+\newenvironment{resonelinesubsec}[2]{
+	\resonelinebigitem{#1}{#2}
 	\vspace{-2pt}
 	\begin{itemize}
 }{
@@ -125,121 +157,102 @@
 
 \vspace{8 pt}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ressection}{Objetivo}
-
-	\resitem{Consultor e/ou programador C++.}
-
+\begin{ressection}{Social}
+  \resitem{Email: \href{mailto:felipe@expertisesolutions.com.br}{\nolinkurl{felipe@expertisesolutions.com.br}}}
+  \resitem{Linkedin: \url{https://br.linkedin.com/in/felipealmeida}}
+  \resitem{Github: \url{https://github.com/felipealmeida}}
+  \resitem{Github: \url{https://github.com/expertisesolutions}}
+  \resitem{EFL Git: \url{https://git.enlightenment.org}}
 \end{ressection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ressection}{Educa\c{c}\~ao}
-
-	\resitem{Universidade Estadual de Campinas (Unicamp) - Campinas, SP - Ci\^encia da Computa\c{c}\~ao.}
-		%\ressubitem{Ingresso: 2003/Incompleto}
-	%\end{ressubsec}
-
+\begin{ressection}{Specialization}
+        \resitem{Linux Embedded Systems development with C, C++,
+          Assembly and other higher-level languages}
+        \resitem{IoT in Linux, RTOS or bare metal with C, C++ and Assembly}
+	\resitem{GUI development in C, C++, JavaScript and Python}
+        \resitem{IPTV and ISDB-T/DVB-S development for Set-Top-Boxes}
+        \resitem{Distributed systems with high-performance with CORBA
+          and DBus}
 \end{ressection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ressection}{Experi\^encia}
-
-  \begin{ressubsec}{TECGRAF}{Rio de Janeiro, RJ}{Analista de Sistemas: Junho de 2010--Atual}
-    \ressubitem{Trabalho de correção e design de projetos baseados em componentes em sistemas distribuídos}
-    \ressubitem{Uso intensivo de tecnologia CORBA}
-    \ressubitem{Contato com equipe de desenvolvimento Petrobrás para suporte das bibliotecas desenvolvidas}
-  \end{ressubsec}
-
-	\begin{ressubsec}{TQTVD}{Rio de Janeiro, RJ}{Analista de Sistemas: Janeiro de 2009--Junho de 2010}
-      \ressubitem{Correções de concorrência, memory leaks e type subverting em código de desenvolvimento
-        terceirizado, adaptado para uso na empresa.}
-      \ressubitem{Trabalho em grupo com correções em middleware e sistema multiplataforma.}
-      \ressubitem{Desenvolvimento de aplicações embarcadas e utilização de plataformas de memória restrita.
-        Criação de middleware para execução de código alto-nível em plataformas embarcadas}
-      \ressubitem{Reescrita de interpretador NCL, linguagem utilizada em TV digital, multi-plataforma,
-        unit-tests e genérica.}
-      \ressubitem{Integração de linguagem Python com middleware de TV digital.}
-	\end{ressubsec}
-
-	\begin{ressubsec}{Synergy Tecnologia}{S\~ao Paulo, SP}{Analista de Sistemas: Janeiro de 2004--2009}
-		\ressubitem{Mantido, redesenhado e programado o projeto MailIntercept (http://www.mintercept.com). Tendo como clientes Missile Defense Agency e Raytheon.}
-		\ressubitem{Profundo conhecimento dos padr\~oes de MIME, SMTP, RFC[2]822. Como tamb\'em do formato TNEF de e-mail do Exchange Server.
-		  Tendo escrito v\'arios parsers para esses padr\~oes, bem como clientes que utilizam asynchronous I/O de SMTP e HTTP.}
-	\end{ressubsec}
-
-	\begin{ressubsec}{Expertise Solutions Consultoria em Inform\'atica}{Campinas, SP}{Consultor e Sócio: Maio de 2006--at\'e o momento}
-		\ressubitem{Professor de uma turma sobre C++ para iniciantes dada no Laborat\'orio do Instituto de
-		Computa\c{c}\~ao da Unicamp.}
-		\ressubitem{Professor de duas turmas no Laboratório do Instituto de Computa\c{c}\~ao de curso intermediário de C++, com total de 137 alunos.}
-	\end{ressubsec}
-
-	\begin{ressubsec}{Z80}{Campinas, SP}{Programador C para BREW: Outubro de 2003--2004}
-		\ressubitem{Programação de jogos para celular.}
-	\end{ressubsec}
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%
-
-	\begin{ressubsec_1}{Boost Libraries}
-		\ressubitem{Constante nos agradecimentos de tr\^es bibliotecas: wave, pointer container e multi\_index}
-		\ressubitem{Constante nos agradecimentos da proposta de biblioteca de rede ao comite de padroniza\c{c}\~ao do C++
-		  (http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2054.pdf), da biblioteca recentemente adicionada asio.}
-		\ressubitem{Trabalhando com peer review de código da cppgui e engine de layout baseado na adam \& eve da Adobe
-		  junto a Boost Libraries, para desenvolvimento de uma biblioteca com maior abrangência e qualidade possíveis.}
-		\ressubitem{Ativo na mailing list de desenvolvimento, dando opiniões, enviando patches}
-	\end{ressubsec_1}
-
-	\begin{ressubsec_1}{Javabind}
-	  \ressubitem{Autor de biblioteca para integração de código Java e C++}
-          \ressubitem{Uso de preprocessor e template metaprogramming}
-          \ressubitem{Criação (por preprocessor metaprogramming) de classes estáticas que representam
-            as mesmas em Java, para checagem estática e performance}
-          \ressubitem{Geração de Class File e bytecode}
-	  \ressubitem{Código em git disponível em https://github.com/felipealmeida/javabind}
-	\end{ressubsec_1}
-	
-	\begin{ressubsec_1}{mORBid}
-	  \ressubitem{Autor de biblioteca de protocolo CORBA}
-          \ressubitem{Uso de metaprogramação para geração de parsers e geradores a partir de gramática GIOP}
-	  \ressubitem{Código em git disponível em https://github.com/felipealmeida/mORBid}
-	\end{ressubsec_1}
-
-	\begin{ressubsec_1}{5$^{\underline{o}}$ Encontro Nacional de Programadores de C e C++}
-	  \ressubitem{Palestrante sobre Linguagens Embutidas de Domínio Específico.}
-	\end{ressubsec_1}
-
+\begin{ressection}{Presentations}
+  \resbigitem{Enlightenment Developer Days 2016}{Paris -
+    France}{Promises and EFL Data Model \\ EFL JavaScript \& C++ bindings}
+  \resbigitem{CppCon 2015}{Bellevue - WA -  USA}{Integrating generators EDSL's for Spirit X3}
+  \resbigitem{12$^{\underline{o}}$ National C++ Meeting 2015}{Rio de Janeiro -
+    Brazil}{Developing Graphical Interfaces in C++ using EFL C++ bindings}
+  \resbigitem{C++Now 2015}{Aspen - CO - USA}{Integrating generators EDSL's for Spirit X3}
+  \resbigitem{Enlightenment Developer Day 2014}{Dusseldorf -Germany}{EFL bindings for C++
+    and JavaScript}
+  \resbigitem{10$^{\underline{o}}$ National C++ Meeting 2013}{Rio de Janeiro -
+    Brazil}{Interoperating C++ and Java using C++ metaprogramming}
+  \resbigitem{5$^{\underline{o}}$ National C++ Meeting 2008}{São Paulo -
+    Brazil}{Creating Embedded Domain Specific Languages for Performance}
 \end{ressection}
 
-\begin{ressection}{Conhecimentos}
-
-	\begin{reslist}{Linguagens de Programa\c{c}\~ao:}
-
-		\ressubitem{Proficiente em C, C++, Assembly 80x86/386+ e MIPS, SQL, HTML, \LaTeX, UNIX Shells, TCP, sockets, XML, postgresql
-          , OpenSSL, Boost, STL, Qt, Gtk, pthreads, Win32, Win64, CMake, Linux, Windows, threads, BD
-          , Design Patterns, CMake, svn, subversion, cvs, Mercurial, regexp, BJam, Boost.Build, CORBA, CMake}
-		\ressubitem{Familiar com Java e C\#.}
-		\ressubitem{Bastante interessado no futuro e presente de C++.}
-        \ressubitem{Autodidata - Com biblioteca contendo vários livros de computação, com mais de 12 livros só de C++. Entre outros de compiladores, influ\^encia da tipagem
-		  no processo de design de software, provabilidade de corretude e etc.}
-		\ressubitem{Este curriculum \'e feito em \LaTeX.}
-		\ressubitem{Inglês fluente.}
-
-	\end{reslist}
-
-\end{ressection}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ressection}{Outros}
-	\resitem{Autor de diversos materiais sobre C++, de iniciantes
-      at\'e para programadores avan\c{c}ados, focando em Software
-      Design.}
-    \resitem{LinkedIn profile: http://br.linkedin.com/in/felipealmeida}
-\end{ressection}
+\begin{ressection}{Projects}
 
+  \begin{resonelinesubsec}{IoT Home Solution}{}
+    \ressubitem{C++ development, with GCC, for AVR 8-bit
+    microcontrollers for smart alarm centrals}
+    \ressubitem{Using CalaOS (\url{http://www.calaos.fr}) as UI for interacting with the alarm system}
+  \end{resonelinesubsec}
+
+  \begin{resonelinesubsec}{EFL GUI-library JavaScript binding generator}{}
+    \ressubitem{Development of a code generator that generates C++
+      code that integrates the
+      \href{https://developers.google.com/v8/}{V8} library with the
+      EFL C API}
+  \end{resonelinesubsec}
+
+  \begin{resonelinesubsec}{EFL GUI-library C++ binding generator}{}
+    \ressubitem{Development of a code generator that generates C++
+      code that integrates modern C++11 with the
+      EFL C API}
+  \end{resonelinesubsec}
+  \newpage
+  \begin{resonelinesubsec}{Clang pre-condition and post-condition
+      syntax support}{}
+    \ressubitem{Development, in progress, of Clang suspport for pre
+      and post-conditions to Clang}
+    \ressubitem{Generation of \href{https://coq.inria.fr/}{coq},
+      static assistant proof, code so users can make correctness
+      proofs with the use of a proof assistant with Hoare Logic, or
+      equivalent, theorems}
+  \end{resonelinesubsec}
+
+  \begin{resonelinesubsec}{Digital TV Interactivity Middleware}{}
+    \ressubitem{Development of a C++ Middleware to run interactivity
+      systems in Digital TV standards for embedded systems}
+    \ressubitem{Development of high performance filters in C++ for
+      Transport Streams, DSM-CC implementation and other Digital TV
+      related technologies}
+  \end{resonelinesubsec}
+
+  \begin{resonelinesubsec}{CORBA}{}
+    \ressubitem{Development of experimental C++ ORB for high
+      performance while leveraging on Template meta-programming}
+    \ressubitem{Meta-programming was able to move information from runtime to compile-time, avoiding unnecessary
+      indirections and memory reads for parsing}
+    \ressubitem{Involvement in develeopment of Authentication and
+      Security System for CORBA standard}
+    \ressubitem{Protocol for authentication used in brazilian oil companies}
+  \end{resonelinesubsec}
+
+  \begin{resonelinesubsec}{Mail System}{}
+    \ressubitem{Development of SMTP libraries for high-performance in
+      C++ using Boost and Asynchronous I/O}
+    \ressubitem{Development of parsers using EBNF format in Embedded
+      Domain Specific Language in Spirit}
+    \ressubitem{Actively participated in Boost.Spirit community for years}
+  \end{resonelinesubsec}
+
+\end{ressection}
 
 \end{document}
