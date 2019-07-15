@@ -8,6 +8,7 @@
 \usepackage{eso-pic}
 \usepackage{calc}
 \usepackage{hyperref}
+\usepackage{graphicx}
 \pagestyle{empty}
 \geometry{letterpaper,tmargin=1cm,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
 
@@ -172,15 +173,21 @@
         \resitem{Linux Embedded Systems development with C, C++,
           Assembly and other higher-level languages}
         \resitem{IoT in Linux, RTOS or bare metal with C, C++ and Assembly}
-	\resitem{GUI development in C, C++, JavaScript and Python}
+	\resitem{GUI development in C, C++, JavaScript, Python and C\#}
+        \resitem{Contiki, FreeRTOS, Zephyr and Linux driver development}
+        \resitem{Mobile appllication development}
         \resitem{IPTV and ISDB-T/DVB-S development for Set-Top-Boxes}
-        \resitem{Distributed systems with high-performance with CORBA
-          and DBus}
+%        \resitem{Distributed systems with high-performance with CORBA
+%          and DBus}
 \end{ressection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ressection}{Presentations}
+  \resbigitem{Native Floripa 2018}{Florianopolis -
+    Brazil}{C++ value-based programming}
+  \resbigitem{Native Floripa 2017}{Florianopolis -
+    Brazil}{Integrating generators EDSL's for Spirit X3}
   \resbigitem{Enlightenment Developer Days 2016}{Paris -
     France}{Promises and EFL Data Model \\ EFL JavaScript \& C++ bindings}
   \resbigitem{CppCon 2015}{Bellevue - WA -  USA}{Integrating generators EDSL's for Spirit X3}
@@ -196,36 +203,52 @@
 \end{ressection}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \begin{ressection}{Projects}
 
-  \begin{resonelinesubsec}{IoT Home Solution}{}
-    \ressubitem{C++ development, with GCC, for AVR 8-bit
-    microcontrollers for smart alarm centrals}
-    \ressubitem{Using CalaOS (\url{http://www.calaos.fr}) as UI for interacting with the alarm system}
+  \begin{resonelinesubsec}{Gstreamer}{}
+    \ressubitem{C and C++ development of sources and demuxers for
+      proprietary IP camera protocol}
+    \ressubitem{Development of sinks for AWS S3 upload}
+    \ressubitem{Integration of gstreamer pipelines with AWS
+      Rekognition service}
+    \ressubitem{Android applications with Gstreamer}
   \end{resonelinesubsec}
 
-  \begin{resonelinesubsec}{EFL GUI-library JavaScript binding generator}{}
+  \begin{resonelinesubsec}{Window Compositor and GUI library}{}
+    \ressubitem{Modern C++ development with goal in performance and
+      battery usage}
+    \ressubitem{Compositor implements Wayland Server protocol and
+      composites Wayland clients}
+    \ressubitem{GUI library uses Vulkan as backend for lower-level
+      graphics API with better performance optimization opportunities}
+    \ressubitem{GUI library and compositor uses multithreading allowed
+      by Vulkan API for lower latency and better usage of CPU resources}
+  \end{resonelinesubsec}
+  
+  \begin{resonelinesubsec}{EFL GUI-library}{}
     \ressubitem{Development of a code generator that generates C++
       code that integrates the
       \href{https://developers.google.com/v8/}{V8} library with the
       EFL C API}
-  \end{resonelinesubsec}
-
-  \begin{resonelinesubsec}{EFL GUI-library C++ binding generator}{}
     \ressubitem{Development of a code generator that generates C++
       code that integrates modern C++11 with the
       EFL C API}
+    \ressubitem{Development of a code generator that generates C\#
+      code that integrates modern C++11 with the
+      EFL C API}
   \end{resonelinesubsec}
-  \newpage
-  \begin{resonelinesubsec}{Clang pre-condition and post-condition
-      syntax support}{}
-    \ressubitem{Development, in progress, of Clang suspport for pre
-      and post-conditions to Clang}
-    \ressubitem{Generation of \href{https://coq.inria.fr/}{coq},
-      static assistant proof, code so users can make correctness
-      proofs with the use of a proof assistant with Hoare Logic, or
-      equivalent, theorems}
-  \end{resonelinesubsec}
+
+  % \newpage
+  % \begin{resonelinesubsec}{Clang pre-condition and post-condition
+  %     syntax support}{}
+  %   \ressubitem{Development, in progress, of Clang suspport for pre
+  %     and post-conditions to Clang}
+  %   \ressubitem{Generation of \href{https://coq.inria.fr/}{coq},
+  %     static assistant proof, code so users can make correctness
+  %     proofs with the use of a proof assistant with Hoare Logic, or
+  %     equivalent, theorems}
+  % \end{resonelinesubsec}
 
   \begin{resonelinesubsec}{Digital TV Interactivity Middleware}{}
     \ressubitem{Development of a C++ Middleware to run interactivity
@@ -233,6 +256,14 @@
     \ressubitem{Development of high performance filters in C++ for
       Transport Streams, DSM-CC implementation and other Digital TV
       related technologies}
+  \end{resonelinesubsec}
+
+  \begin{resonelinesubsec}{Mail System}{}
+    \ressubitem{Development of SMTP libraries for high-performance in
+      C++ using Boost and Asynchronous I/O}
+    \ressubitem{Development of parsers using EBNF format in Embedded
+      Domain Specific Language in Spirit}
+    \ressubitem{Actively participated in Boost.Spirit community for years}
   \end{resonelinesubsec}
 
   \begin{resonelinesubsec}{CORBA}{}
@@ -245,14 +276,7 @@
     \ressubitem{Protocol for authentication used in brazilian oil companies}
   \end{resonelinesubsec}
 
-  \begin{resonelinesubsec}{Mail System}{}
-    \ressubitem{Development of SMTP libraries for high-performance in
-      C++ using Boost and Asynchronous I/O}
-    \ressubitem{Development of parsers using EBNF format in Embedded
-      Domain Specific Language in Spirit}
-    \ressubitem{Actively participated in Boost.Spirit community for years}
-  \end{resonelinesubsec}
-
+  
 \end{ressection}
 
 \end{document}
